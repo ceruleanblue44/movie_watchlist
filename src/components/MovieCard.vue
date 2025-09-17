@@ -5,7 +5,7 @@
 <template>
 	<!-- Movie Card -->
 	<article class="movie-card bg-neutral-800 rounded-xl shadow-md overflow-hidden hover:scale-[1.02] transition">
-		<img src="https://via.placeholder.com/360x540"
+		<img src=""
 			 alt="Movie Poster"
 			 class="movie-card__poster w-full">
 		<div class="movie-card__info p-3">

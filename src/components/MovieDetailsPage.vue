@@ -6,7 +6,7 @@
 	<!-- Movie Details Page Example -->
 	<section class="movie-details px-4 py-6 hidden lg:flex lg:gap-6">
 		<!-- Poster left -->
-		<img src="https://via.placeholder.com/400x600"
+		<img src=""
 			 alt="Large Poster"
 			 class="movie-details__poster w-full lg:w-1/3 rounded-xl mb-4 lg:mb-0">
 

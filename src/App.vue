@@ -1,7 +1,8 @@
 <script setup lang="ts">
 
-import NavBar from './components/Navbar.vue'
+import NavBar from './components/NavBar.vue'
 import MainPage from './components/MainPage.vue'
+
 </script>
 
 <template>
