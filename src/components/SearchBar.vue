@@ -1,31 +1,30 @@
 <script setup
 		lang="ts">
-import MovieDetailsPage from './MovieDetailsPage.vue'
-import { searchMovies } from '@/api/omdb'
-
-const searchQuery = defineModel<string>()
 const API_KEY = import.meta.env.VITE_OMDB_API_KEY
 
-interface Movie {
-  id: string
-  title: string
-  year: string
-  poster: string
-  overview?: string
-}
+import MovieDetailsPage from './MovieDetailsPage.vue'
+import { searchMovies } from '@/api/omdb'
+import { MovieSummary } from '@/types/omdb'
 
-const logSearchQuery = () => {
-	console.log(searchQuery.value);
-}
 
-const logSearchMoviesData = async () => {
+const emit = defineEmits<{ (e: 'update:movies', movies: MovieSummary[]): void }>()
+
+const searchQuery = defineModel<string>()
+
+const searchMoviesData = async () => {
+	if (!searchQuery.value) return
+
 	try {
 		const data = await searchMovies(searchQuery.value)
-		console.log(data);
+		console.log(data.Search);
+		emit('update:movies', data.Search)
+		return data.Search
 	} catch(err) {
 		console.error(err);
 	}
 }
+
+
 
 
 
@@ -38,9 +37,10 @@ const logSearchMoviesData = async () => {
 			<input type="text"
 				   id="movie-search"
 				   placeholder="Search movies..."
-				   class="search__input flex-1 bg-transparent text-gray-300 placeholder-gray-500 focus:outline-none text-sm md:text-base" 
+				   class="search__input flex-1 bg-transparent text-gray-300 placeholder-gray-500 focus:outline-none text-sm md:text-base"
 				   v-model='searchQuery'>
-			<label for="movie-search" @click="logSearchMoviesData">
+			<label for="movie-search"
+				   @click="searchMoviesData">
 				<svg class="search__icon w-5 h-5 text-gray-400"
 					 fill="none"
 					 stroke="currentColor"
@@ -50,7 +50,9 @@ const logSearchMoviesData = async () => {
 						  stroke-width="2"
 						  d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
 				</svg> </label>
-			</div>
+		</div>
 	</section>
-	<MovieDetailsPage />
+	
+	<!-- <MovieDetailsPage /> -->
+	 
 </template>

@@ -1,6 +1,8 @@
 <script setup
 		lang="ts">
 		import MovieCard from './MovieCard.vue'
+		import { MovieSummary } from '@/types/omdb';
+		const props = defineProps<{ movies: MovieSummary[] }>()
 </script>
 
 <template>
@@ -10,7 +12,7 @@
 
 
 		<!-- Repeat movie cards... -->
-		<MovieCard />
+		<MovieCard v-for="movie in props.movies" :key="movie.imdbID" :movie="movie" />
 
 	</main>
 </template>

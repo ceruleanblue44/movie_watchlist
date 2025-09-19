@@ -1,22 +1,21 @@
 {
-	"files": [],
-	"references": [
-		{
-			"path": "./tsconfig.app.json"
-		},
-		{
-			"path": "./tsconfig.node.json"
-		},
-	],
-	"compilerOptions": {
-		"baseUrl": ".",
-		"paths": {
-			"@/*": [
-				"src/*"
-			]
-		},
-		"types": [
-			"node"
-		]
-	}
+  "compilerOptions": {
+    "target": "ESNext",              // modern JS output
+    "module": "ESNext",              // module system
+    "moduleResolution": "Node",
+    "strict": true,                  // enable all TS strict checks
+    "jsx": "preserve",               // for Vue JSX support
+    "sourceMap": true,
+    "baseUrl": ".",                  // for @ alias
+    "paths": {
+      "@/*": ["src/*"]               // your @ alias points to src/
+    },
+    "types": ["node"]                // Node types (for fetch, etc.)
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.vue"
+  ],
+  "exclude": ["node_modules", "dist"]
 }
