@@ -28,6 +28,8 @@ body {
 /* .header__title {
 	font-family: 'Inter', sans-serif;
 } */
+
+
 .movie-card__poster {
 	border-radius: 8px;
 	overflow: hidden;
@@ -46,6 +48,15 @@ body {
 	right: 0;
 	bottom: 0;
 	height: 30%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #262626 inset; /* same as neutral-800 */
+  box-shadow: 0 0 0px 1000px #262626 inset;
+  -webkit-text-fill-color: #d1d5db; /* text-gray-300 */
+  transition: background-color 9999s ease-in-out 0s; /* prevent flash */
 }
 
 

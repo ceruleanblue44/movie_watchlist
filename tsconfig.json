@@ -16,6 +16,6 @@
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.vue"
-  ],
+, "src/router/index.js"  ],
   "exclude": ["node_modules", "dist"]
 }

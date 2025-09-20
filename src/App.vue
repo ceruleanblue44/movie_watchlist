@@ -1,16 +1,11 @@
-<script setup lang="ts">
-
-import NavBar from './components/NavBar.vue'
-import MainPage from './components/MainPage.vue'
+<script setup
+		lang="ts">
+import { RouterView } from 'vue-router'
 
 </script>
 
 <template>
-	<NavBar />
-	<MainPage />
-
+	<RouterView />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

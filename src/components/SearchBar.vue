@@ -37,7 +37,7 @@ const searchMoviesData = async () => {
 			<input type="text"
 				   id="movie-search"
 				   placeholder="Search movies..."
-				   class="search__input flex-1 bg-transparent text-gray-300 placeholder-gray-500 focus:outline-none text-sm md:text-base"
+				   class="search__input flex-1 text-gray-300 placeholder-gray-500 focus:outline-none focus:bg-neutral-800 text-sm md:text-base"
 				   v-model='searchQuery'>
 			<label for="movie-search"
 				   @click="searchMoviesData">
